@@ -1,0 +1,146 @@
+<html>
+	<head>
+        <link href="style.css" rel="stylesheet">
+        <title> SECIOTT: Ensuring End-to-End IoT Data Security through Cloud-Enhanced Confidential Computing </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	</head>
+
+	<body  style="background-color:#DBF9FC"; oncontextmenu="return false";>
+		<header id="header">
+			<!-- resume header with your name and title -->
+			<h1><b> SECIOTT: Ensuring End-to-End IoT Data Security through Cloud-Enhanced Confidential Computing </b></h1>
+            <!--<p class="p-welcome"> Welcome to my personal website. Feel free to contact me about my works</p> -->
+			<hr>
+
+			<p style="text-align:justify"> <b> <u>SECIOTT</u> The IOT devices are rapidly becoming ubiquitous for their ability to effortlessly automate processes by interconnecting smart devices without human intervention. These devices collect data from the most private and sensitive domains of our lives and send to the cloud services for management and further processing including the rule-based automation programs. The cloud services are vulnerable to outside threats, which could cause serious user privacy violations as well as user safety risks leading to unrecoverable loses. Hence, it’s essential to protect the sensitive and private IOT data and rule-based automation programs against different cyberattacks. To safeguard this sensitive and private IOT data, solutions based on trusted execution environments (TEEs) could be utilized, providing end-to-end encrypted solution. However, in this study, we demonstrate that the end-to-end encryption offered by TEE based solutions for IOT devices may not be entirely sufficient. We substantiate this by revealing an attack that can infer sensitive IOT device information, such as the temperature reading of a thermometer, merely by analyzing memory access patterns of the TEE based solution. Our results indicate that in some cases, we can detect the device type with around 95% accuracy and we can infer the values sent by IOT devices (e.g., temperature reading) with approximately 85% accuracy. Subsequently, we design a system called SECIOTT to enhance the overall data security of IOT based solutions in the cloud that prevents these types of attacks by employing strategies such as oblivious execution and data padding. With our defense strategy to mitigate the pattern leakage, we observe significant reduction in device type detection and value prediction with accuracy of at most 27% and 19%, respectively. </b> </p>
+			<hr>
+		</header>
+		<main>
+			<article id="mainLeft">
+				<section>
+					<h2><b>CONTACT </b></h2>
+					<!-- contact info including social media -->
+                    <p>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:md.shihabul.islam@utdallas.edu">md.shihabul.islam@utdallas.edu</a>
+                        <!--<a href="mailto:mahmoud.zamani@utdallas.edu">   Mahmoud.Zamani@UTDallas.edu</a>-->
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:mahmoud.zamani@utdallas.edu">mahmoud.zamani@utdallas.edu</a>
+                        <!--<a href="mailto:mahmoud.zamani@utdallas.edu">   Mahmoud.Zamani@UTDallas.edu</a>-->
+                    </p>
+                    <p>
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/MahmoudZamani"> Mahmoud Zamani</a>
+                    </p>
+				</section>
+                <section>
+					<h2><b> SECIOTT Architecture </b></h2>
+					<!-- your skills -->
+                    <hr><b></b></hr>
+                    <center><img src="./images/SECIoTT-Arc.JPG" alt="centered image" ht="1000" width="1000"></center>
+				</section>
+				<section>
+					<h2> <p style="text-align:justify"> <b> Rule Conflict Definitions </b> </p> </h2>
+					<!-- your skills -->
+                    <hr><b></b></hr>
+                    <center> <img src="./images/Table-1-ruleconflictdefinitions.JPG" height="150"> </center>
+				</section>
+                <section>
+					<h2><b> Sample Rule in JSON  </b></h2>
+					<!-- your skills -->
+                    <hr><b></b></hr>
+                    <center> <img src="./images/Samplerule.JPG" height="150" wedth=""> </center>
+				</section>               
+				<section>
+					<h2><b> Sample Device Event in JSON </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/SampleDeviceEventinJSON.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b>  Sample code-snippet for obliviously checking equality condition </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/SampleCode-SnippetForObliviouslyChecking.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b>  Comparison of average execution time for three cases: no SGX, SGX without encryption, and with SGX. A total of 10000 device events are considered with varying Ruleset sizes of 100, 1000, 10000, and 100000. </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/Comparison.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b> Smart devices used in the Smart Home Automation </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/SmartHomeDevices.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b> Comparison of Enclave heap memory (in KB) used for two cases: with SGX and with SGX but without encryption. A total of 10000 device events are considered with varying Ruleset sizes of 100, 1000, 10000, and 100000. </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/Comparison-2.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b> Multiclass classification (10 classes) for predicting (5a) device type and (5b) number of rules satisfied in enclave. </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/MulticlassClassification.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b> Prediction of Motion Sensor Values (active, inactive) </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/MotionSensorPrediction.JPG" height="598" width="398"> </center>
+
+  			    </section>
+                <section>
+					<h2><b> Prediction of Temperature and Humidity values (5 buckets) </b></h2>
+                    <hr><b></b></hr>
+                    <center> <img src="./images/TempreturePrediction.JPG" height="598" width="398"> </center>
+
+  			    </section>
+				<section>
+					<h2> <b> Conclusion </b> </h2>
+					<!-- your education -->
+                    <hr style="text-align:justify"> <b> Since the IOT ecosystem is ever-growing, more robust solutions are required to protect private and sensitive user information from falling into the wrong hands. In this paper, we propose an end-to-end secure IOT data management platform, named SECIOTT, by utilizing strong cryptographic techniques and TEEs such as INTEL SGX and ARM TRUST-ZONE. We implement a trigger-action rule-based IOT automation framework as an application of SECIOTT, where we securely operate on the IOT data and rules in the SGX enclave to automate processes for securely controlling and managing IOT devices. We evaluate SECIOTT with IOT data in real-time from real smart devices in a practical smart home scenario. Moreover, we investigate the effect of access pattern leakage attack on SGX and discover that sensitive IoT information can be inferred with notable accuracy, which demonstrates that end-to-end encryption-based TEE solutions are not adequate to safeguard private information. Consequently, we propose countermeasures based on oblivious execution and data padding to obscure the access pattern leakages. Our empirical evaluation suggests that the proposed defense strategy achieves impressive results by significantly reducing the prediction accuracy of IOT data information, and thereby further fortifying the encryption-based TEE solutions and ensuring system security and data privacy. </b></hr>
+                    <h3></h3>
+                </section>
+                <section>
+					<h2><b> Usages </b></h2>
+                    <hr style="text-align:justify"> <b> Readme File Link </b> </hr>
+                </section>
+                <section>
+                    <h2><b> Download </b></h2>
+                    <hr><b></b></hr>
+                    <!-- <p> <b> Link:  <a href="https://utdallas.box.com/s/1onexj8emcgorwq5798yu07id1o7m255"> VulGr Dataset </a>.</p> -->
+                    <p>I will make the project available and open-source after the paper published. Please let us know if you need our help to reproduce the results and share your feedbacks to improve the current and future works. </b></p>
+                </section>
+			</article>
+			<article id="mainRight">
+
+                <section>
+					<h2><b> Related Pulications </b></h2>
+					<!-- about you -->
+                    <hr></hr>
+<!--                    <p>
+                        <a href="https://openreview.net/forum?id=rrZtzI7xj2b"> 1.</a></a> <u>Zamani, M.</u>, Irteza, S., et al., Cross Domain Vulnerability Detection Using Graph Contrastive Learning, Accepted in ICLR TinyPaper 2023 </a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/mahmoud-zamani/"> 2.</a></a> <u>Wickramasuriya, S.</u>, Zamani, M., et al., RANSAQ: Searching Source-Binary Hybrid Code Property Graphs for Vulnerabilities, In final preparation for NDSS 2023  </a>
+                    </p>
+                    <p>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=i1OZXOAAAAAJ&citation_for_view=i1OZXOAAAAAJ:UeHWp8X0CEIC"> 3.</a></a> Li, X., Khan, L., <u>Zamani, M.</u>, et al., Con2Mix: A Semi-Supervised Method for Imbalanced Tabular Security Data, 2023 IFIP Annual Conference on Data and Applications Security and Privacy </a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/mahmoud-zamani/"> 4.</a></a> <u>Zamani, M.</u>, Khan, L., Hamlen, K., Robust Vulnerability Detection Systems Using Explainable AI Methods, INFORM 2023</a>
+                    </p>
+                    <p>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=i1OZXOAAAAAJ&citation_for_view=i1OZXOAAAAAJ:UeHWp8X0CEIC"> 5.</a></a> Li, X., Khan, L., <u>Zamani, M.</u>, et a., MCoM: A Semi-Supervised Method for Imbalanced Tabular Security Data. In: Sural, S., Lu, H. (eds) Data and Applications Security and Privacy XXXVI. DBSec 2022.</a>
+                    </p>  -->
+				</section>
+			</article>
+		</main>
+	</body>
+</html>
