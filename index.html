@@ -8,7 +8,7 @@
 	<body  style="background-color:#DBF9FC"; oncontextmenu="return false";>
 		<header id="header">
 			<!-- resume header with your name and title -->
-			<h1><b> SECIOTT: Ensuring End-to-End IoT Data Security through Cloud-Enhanced Confidential Computing </b></h1>
+			<h1 style="color: darkblue;"><b> SECIOTT: Ensuring End-to-End IoT Data Security through Cloud-Enhanced Confidential Computing </b></h1>
             <!--<p class="p-welcome"> Welcome to my personal website. Feel free to contact me about my works</p> -->
 			<hr>
 
@@ -18,7 +18,7 @@
 		<main>
 			<article id="mainLeft">
 				<section>
-					<h2><b>CONTACT </b></h2>
+					<h2 style="color: darkblue;"><b>CONTACT </b></h2>
 					<!-- contact info including social media -->
                     <p>
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
 				</section>
                 <section>
                     <hr><b></b></hr>
-					<h2><b> SECIOTT Architecture </b></h2>
+					<h2 style="color: darkblue;"><b> SECIOTT Architecture </b></h2>
 					<!-- your skills -->
                     <hr><b></b></hr>
                     <center><img src="./images/SECIoTT-Arc.JPG" alt="centered image" ht="1000" width="1000"></center>
@@ -60,25 +60,89 @@
 			        <hr>
 				</section>
 				<section>
-					<h2> <p style="text-align:justify"> <b> Rule Conflict Definitions </b> </p> </h2>
+					<h2 style="color: darkblue;"> <p style="text-align:justify"> <b> Rule Conflict Definitions </b> </p> </h2>
 					<!-- your skills -->
                     <hr><b></b></hr>
                     <center> <img src="./images/Table-1-ruleconflictdefinitions.JPG" ht="1000" width="1000"> </center> <hr>
 				</section>
                 <section>
-					<h2><b> Sample Rule in JSON  </b></h2>
+					<h2 style="color: darkblue;"><b> Sample Rule in JSON  </b></h2>
 					<!-- your skills -->
                     <hr><b></b></hr>
                     <center> <img src="./images/Samplerule.JPG" ht="500" width="500"> </center> <hr>
 				</section>               
 				<section>
-					<h2><b> Sample Device Event in JSON </b></h2>
+					<h2 style="color: darkblue;"><b> Sample Device Event in JSON </b></h2>
                     <hr><b></b></hr> 
                     <center> <img src="./images/SampleDeviceEventinJSON.JPG" ht="500" width="500"> </center> <hr>
 
   			    </section>
                 <section>
-					<h2><b>  Sample code-snippet for obliviously checking equality condition </b></h2>
+                    
+					<h2 style="color: darkblue;"><b> Example Run of the Sample Code </b></h2>
+					<!-- your skills -->
+                    <hr><b></b></hr>
+                    <!--<hr>-->
+			        <p style="text-align:justify"> 
+                    <h2></h2>
+
+                    <h3>Prerequisites:</h3>
+                    <p>Intel SGX:</p>
+                    <p>Please follow the Readme file to install required sdks, libraries, and packages.</p>
+            
+                    <p>ARM TrustZone:</p>
+                    <p>Please follow the Readme file to install required sdks, libraries, and packages.</p>
+            
+                <h3>Required Devices:</h3>
+                    <ul>
+                        <li>System with a processor that supports Intel SGX</li>
+                        <li>Raspberry Pi 3</li>
+                        <li>Triggering device: Motion Sensor (optional)</li>
+                        <li>Triggering device: Temperature Sensor (optional)</li>
+                        <li>Actuator device: LED</li>
+                    </ul>
+            
+                <h3>Rule Registration in SGX:</h3>
+                <ul>
+                    <li>Use the "SampleRules.json" file. It contains a list of rules in trigger-action format in json.</li>
+                    <li>Copy this file in the &lt;project-source folder&gt;/datafiles directory</li>
+                </ul>
+            
+                <h3>IoT Device Info Setup:</h3>
+                <ul>
+                    <li>Use the "SampleDeviceInfo.json" file. It contains:</li>
+                    <ul>
+                        <li>user information (e.g., user id)</li>
+                        <li>necessary device information for each device (e.g., device id, capability, attribute, value unit, topic for pub/sub)</li>
+                    </ul>
+                    <li>Copy this file in the &lt;project-source folder&gt;/out-br/target/root directory</li>
+                </ul>
+            
+                <h3>Start the Apps (SGX and TrustZone):</h3>
+                <ul>
+                    <li>Build following the Readme files.</li>
+                    <li>First, register the rules in SGX:</li>
+                    <ul>
+                        <li>Run using command: "./app -r 1 -d 0 -ob 1"</li>
+                        <li>Run the python code "RuleManager.py" to encrypt the rules and send to server for processing in SGX
+                            enclave.</li>
+                        <li>Alternatively, load encrypted ruleset from file "SampleRulesEnc.json" into the MongoDB in collection
+                            name "SampleRules".</li>
+                    </ul>
+                    <li>Second, run the SGX app that waits for incoming trigger-events from registered IoT devices:</li>
+                    <ul>
+                        <li>Run using command: "./app -r 0 -d 1 -ob 1"</li>
+                    </ul>
+                    <li>Lastl, run the TrustZone app:</li>
+                    <ul>
+                        <li>Run the app that sends trigger-events from a motion and temperature sensor to SGX server using
+                            command: "optee_example_iot -op 0"</li>
+                        <li>Run the app that waits for actuator-commands from SGX server using command: "optee_example_iot -op 1"</li>
+                    </ul>
+                </ul>
+                <hr><b></b></hr>
+                <section>
+					<h2 style="color: darkblue;"><b>  Sample code-snippet for obliviously checking equality condition </b></h2>
                     <hr><b></b></hr>
                     <center> <img src="./images/SampleCode-SnippetForObliviouslyChecking.JPG" ht="700" width="700"> </center> <hr>
 
@@ -90,7 +154,7 @@
 
   			    </section> -->
                 <section>
-					<h2><b> Smart devices used in the Smart Home Automation </b></h2>
+					<h2 style="color: darkblue;"><b> Smart devices used in the Smart Home Automation </b></h2>
                     <hr><b></b></hr>
                     <center> <img src="./images/SmartHomeDevices.JPG" ht="1000" width="1000"> </center> <hr>
 
@@ -120,19 +184,19 @@
 
   			    </section> -->
 				<section>
-					<h2> <b> Conclusion </b> </h2>
+					<h2 style="color: darkblue;"> <b> Conclusion </b> </h2>
 					<!-- your education -->
                     <hr style="text-align:justify"> Since the IOT ecosystem is ever-growing, more robust solutions are required to protect private and sensitive user information from falling into the wrong hands. In this paper, we propose an end-to-end secure IOT data management platform, named SECIOTT, by utilizing strong cryptographic techniques and TEEs such as INTEL SGX and ARM TRUST-ZONE. We implement a trigger-action rule-based IOT automation framework as an application of SECIOTT, where we securely operate on the IOT data and rules in the SGX enclave to automate processes for securely controlling and managing IOT devices. We evaluate SECIOTT with IOT data in real-time from real smart devices in a practical smart home scenario. Moreover, we investigate the effect of access pattern leakage attack on SGX and discover that sensitive IoT information can be inferred with notable accuracy, which demonstrates that end-to-end encryption-based TEE solutions are not adequate to safeguard private information. Consequently, we propose countermeasures based on oblivious execution and data padding to obscure the access pattern leakages. Our empirical evaluation suggests that the proposed defense strategy achieves impressive results by significantly reducing the prediction accuracy of IOT data information, and thereby further fortifying the encryption-based TEE solutions and ensuring system security and data privacy. </hr>
                     <h3></h3>
                 </section>
                 <section>
                     <hr><b></b></hr>
-					<h2><b> Usages </b></h2>
+					<h2 style="color: darkblue;"><b> Usages </b></h2>
                     <hr style="text-align:justify"> <b> Readme File Link </b> </hr>
                 </section>
                 <section>
                     <hr><b></b></hr>
-                    <h2><b> Download </b></h2>
+                    <h2 style="color: darkblue;"><b> Download </b></h2>
                     <hr><b></b></hr>
                     <!-- <p> <b> Link:  <a href="https://utdallas.box.com/s/1onexj8emcgorwq5798yu07id1o7m255"> VulGr Dataset </a>.</p> -->
                     <p>I will make the project available and open-source after the paper published. Please let us know if you need our help to reproduce the results and share your feedbacks to improve the current and future works. </b></p>
