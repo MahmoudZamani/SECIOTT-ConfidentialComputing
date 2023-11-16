@@ -110,38 +110,56 @@
             
                 <h3>SGX: Build and Run</h3>
                 <ul>
-                    <li>1. Make sure your environment is set: $ source ${sgx-sdk-install-path}/environment</li>
-                    <li>2. First, follow the `sample_device_info.json` in the `datafiles` folder that contains necessary IoT device information.</li>
-                    <li>     - user information (e.g., user id)</li>
-                    <li>          - necessary device information for each device (e.g., device id, capability, attribute, value unit, topic for pub/sub)</li>
-                    <li>3. Second, you need to register the rules in SGX.</li>
-                    <li>     - Follow the `sample_ruleset_v1.0.json` file. It contains a list of rules in trigger-action format in json.</li>
-                    <li>     - Load the sample encrypted ruleset from file `sample_ruleset_v1_enc.json` into the MongoDB using `mongoimport` command:</li>
-                    <li>         `mongoimport --db=IOT --collection=sample_ruleset_v1 --file=sample_ruleset_v1_enc.json`</li>
-                    <li>4. Build the project with the prepared Makefile:</li>
-                    <li>     - Hardware Mode, Debug build: $ make</li>
-                    <li>     - Simulation Mode, Debug build: $ make SGX_MODE=SIM</li>
-                    <li>5. Lastly, run the SGX app that awaits for incoming trigger-events from registered IoT devices:</li>
-                    <li>     - Run using command: `./app sample_ruleset_v1 datafiles/sample_device_info.json -r 0 -d 1`</li>
-                    <li>6. Remember to `make clean` before switching build mode or after updating `Enclave.edl` file.</li>
-                    <li>7. Argument list:</li>
-                    <li>     a. MongoDB collection name (required)</li>
-                    <li>     b. json file path containing device information (required)</li>
-                    <li>     c. Optional arguments: see the `App.c` for more information</li>
+                    <li>(1) Make sure your environment is set: $ source ${sgx-sdk-install-path}/environment</li>
+                    <li>(2) First, follow the `sample_device_info.json` in the `datafiles` folder that contains necessary IoT device information.</li>
+                    <ul>
+                           <li>user information (e.g., user id)</li>
+                           <ul>
+                                <li>necessary device information for each device (e.g., device id, capability, attribute, value unit, topic for pub/sub)</li>
+                           </ul>
+                    </ul>       
+                    <li>(3) Second, you need to register the rules in SGX.</li>
+                    <ul>
+                        <li>Follow the `sample_ruleset_v1.0.json` file. It contains a list of rules in trigger-action format in json.</li>
+                        <li>Load the sample encrypted ruleset from file `sample_ruleset_v1_enc.json` into the MongoDB using `mongoimport` command:</li>
+                        <ul>
+                            <li>`mongoimport --db=IOT --collection=sample_ruleset_v1 --file=sample_ruleset_v1_enc.json`</li>
+                        </ul>
+                    </ul>
+                    <li>(4) Build the project with the prepared Makefile:</li>
+                    <ul>
+                        <li>Hardware Mode, Debug build: $ make</li>
+                        <li>Simulation Mode, Debug build: $ make SGX_MODE=SIM</li>
+                    </ul>
+                    <li>(5) Lastly, run the SGX app that awaits for incoming trigger-events from registered IoT devices:</li>
+                    <ul>
+                        <li>Run using command: `./app sample_ruleset_v1 datafiles/sample_device_info.json -r 0 -d 1`</li>
+                    </ul>
+                    <li>(6) Remember to `make clean` before switching build mode or after updating `Enclave.edl` file.</li>
+                    <li>(7) Argument list:</li>
+                    <ul>
+                        <li>     (a) MongoDB collection name (required)</li>
+                        <li>     (b) json file path containing device information (required)</li>
+                        <li>     (c) Optional arguments: see the `App.c` for more information</li>
+                    </ul>
                 </ul> 
                 <h3>IoT: Build and Run</h3>
                 <ul>
-                    <li>1. Build following the OP-TEE documentation:</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>(1) Build following the OP-TEE documentation:</li>
+                    <ul>
+                        <li>[Rpi3 OP-TEE documentation](https://optee.readthedocs.io/en/latest/building/devices/rpi3.html)</li>
+                        <li>[Qemu OP-TEE documentation](https://optee.readthedocs.io/en/latest/building/devices/qemu.html#qemu-v8)</li>
+                    </ul>
+                    <li>(2) Copy any necessary files, that you need to access from your app (e.g., sample_device_info.json), to `<optee_project_dir>/out-br/target/root/` folder. You need to build again after this and flash the device.</li>
+                    <li>(3) In the device, login with password `root`</li>
+                    <li>(4) To run the app, use command: `optee_example_iot <device info file path> <pub/sub mode>`</li>
+                    <ul>
+                        <li>Run the app that sends trigger-events from a motion and temperature sensor to SGX server using command: "optee_example_iot sample_device_info.json -op 0"</li>
+                        <li>See the `main.c` for more information</li>
+                    </ul>
                 </ul> 
             
- <!--               <h3>IoT Device Info Setup:</h3>
+ <!--           <h3>IoT Device Info Setup:</h3>
                 <ul>
                     <li>Use the "SampleDeviceInfo.json" file. It contains:</li>
                     <ul>
